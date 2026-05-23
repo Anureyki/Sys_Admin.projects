@@ -1,0 +1,21 @@
+# DNS Port Conflict: Pi-hole vs Nginx (WordPress)
+
+## Overview
+This project documents the complete troubleshooting and resolution of a port conflict between a Docker-based Pi-hole (DNS filtering) and Nginx (WordPress) on an Ubuntu server.
+
+## The Problem
+- WordPress site (Nginx) was inaccessible
+- Pi-hole's web interface was also inaccessible
+- Server required daily reboots to temporarily fix glitching
+- Root cause: Both services were trying to use **port 80** simultaneously
+
+## Symptoms Observed
+- `systemctl status nginx` showed: `code=killed, signal=KILL`
+- Pi-hole container was running but web interface unreachable
+- Port 80 was bound to `docker-proxy` (Pi-hole) but Nginx also needed it
+
+## Diagnostic Steps
+
+### 1. Check what's using port 80
+```bash
+sudo ss -tulpn | grep :80
