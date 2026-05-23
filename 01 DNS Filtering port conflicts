@@ -1,4 +1,4 @@
-# DNS Port Conflict: Pi-hole vs Nginx (WordPress)
+DNS Port Conflict: Pi-hole vs Nginx (WordPress)
 
 ## Overview
 This project documents the complete troubleshooting and resolution of a port conflict between a Docker-based Pi-hole (DNS filtering) and Nginx (WordPress) on an Ubuntu server.
@@ -19,3 +19,159 @@ This project documents the complete troubleshooting and resolution of a port con
 ### 1. Check what's using port 80
 ```bash
 sudo ss -tulpn | grep :80
+```
+
+Output: Showed docker-proxy using port 80 (Pi-hole container)
+
+2. Check Nginx status
+
+```bash
+sudo systemctl status nginx
+```
+
+Output: failed (Result: signal) with code=killed, signal=KILL
+
+3. Identify the container name
+
+```bash
+docker ps
+```
+
+Container name: pihole-unbound
+
+4. Check Pi-hole container logs
+
+```bash
+docker logs pihole-unbound --tail 50
+```
+
+Output: Confirmed FTL was listening internally but port not accessible externally
+
+The Solution
+
+Step 1: Stop and remove the existing container (data preserved in volumes)
+
+```bash
+docker stop pihole-unbound
+docker rm pihole-unbound
+```
+
+Step 2: Recreate the container with port 8080 for web interface
+
+```bash
+docker run -d \
+  --name pihole-unbound \
+  --restart unless-stopped \
+  -p 53:53/tcp -p 53:53/udp \
+  -p 8080:80 \
+  -v pihole-data:/etc/pihole \
+  -v dnsmasq-data:/etc/dnsmasq.d \
+  -e TZ="America/Chicago" \
+  -e WEBPASSWORD="Anuserver327" \
+  pihole/pihole:latest
+```
+
+Step 3: Restart Nginx
+
+```bash
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
+
+Final Working Configuration
+
+Service Port Access URL
+WordPress (Nginx) 80 http://192.168.1.139
+Pi-hole DNS 53 (UDP/TCP) (background service)
+Pi-hole Admin 8080 http://192.168.1.139:8080/admin
+
+Additional Improvements Made
+
+Set memory limit to prevent crashes
+
+```bash
+docker update --memory=512m --memory-swap=1g pihole-unbound
+```
+
+Added Docker auto-restart policy
+
+Already included in run command: --restart unless-stopped
+
+Configured Pi-hole blocklists and regex filters
+
+· Added regex patterns for ad servers, telemetry, analytics, trackers
+· Block rate achieved: 89.7% of DNS queries
+
+Set up automated gravity updates (cron)
+
+```bash
+(crontab -l 2>/dev/null; echo "0 2 * * * /usr/bin/docker exec pihole-unbound pihole -g") | crontab -
+```
+
+Lessons Learned
+
+Linux / System Administration
+
+· ss -tulpn is essential for diagnosing port conflicts
+· systemctl status reveals why a service failed
+· Port conflicts cause cascading failures (Nginx killed, web interfaces down)
+
+Docker
+
+· Docker containers cannot change port mappings without recreating them
+· Data volumes (-v) preserve configuration across container removal
+· docker inspect --format='{{.LogPath}}' finds container logs
+· --restart unless-stopped ensures container survives reboots/crashes
+
+Port Planning
+
+· Default ports (80, 443) should go to primary web server
+· Ancillary services (admin panels) should use alternate ports (8080, 8443)
+
+Commands Reference Sheet
+
+```bash
+# Find what's using a port
+sudo ss -tulpn | grep :80
+
+# Check service status
+sudo systemctl status nginx
+
+# View Docker container logs
+docker logs pihole-unbound --tail 50
+
+# Find container log file path
+docker inspect --format='{{.LogPath}}' pihole-unbound
+
+# Restart container
+docker restart pihole-unbound
+
+# Set memory limit on running container
+docker update --memory=512m pihole-unbound
+```
+
+Screenshots
+
+(Add screenshots here)
+
+· ss -tulpn | grep :80 output showing port conflict
+· Nginx status showing killed
+· Final working web interfaces
+· Pi-hole dashboard showing 89.7% block rate
+
+Related Projects
+
+· Fail2ban configuration for Pi-hole web auth
+· Docker memory limit tuning for OOM prevention
+· Pi-hole regex blocklist management
+
+Date Completed
+
+May 2026
+
+Environment
+
+· OS: Ubuntu (via SSH on 192.168.1.139)
+· Container: pihole/pihole:latest
+· Web Server: Nginx (WordPress)
+· Firewall: UFW (active)
