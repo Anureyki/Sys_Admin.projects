@@ -10,8 +10,8 @@ Pi-hole vs Nginx fighting over port 80 — diagnosis, resolution, and remapping 
 ### 2. [Fail2ban for Pi-hole (Docker)](https://github.com/Anureyki/Sys_Admin.projects/blob/main/fail2ban-docker.md)
 Brute force protection for Pi-hole's web interface using custom fail2ban filters and Docker log paths.
 
-### 3. [SSH Hardening](03-ssh-hardening/)
-Blocking brute force attacks with fail2ban, disabling root login, password authentication, and moving to key-only access.
+### 3. [SSH Hardening](https://github.com/Anureyki/Sys_Admin.projects/blob/main/ssh-hardening.md)
+Blocking brute force attacks with fail2ban, disabling root login, password authentication, and moving to key‑only access.
 
 ### 4. [Pi-hole Automation](04-pihole-automation/)
 Daily gravity updates and auto-restart health checks using cron and Docker restart policies.
