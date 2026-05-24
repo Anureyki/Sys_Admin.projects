@@ -7,7 +7,7 @@ A collection of real-world Linux system administration fixes, automation, and se
 ### 1. [DNS Port Conflict](https://github.com/Anureyki/Sys_Admin.projects/blob/main/01%20DNS%20Filtering%20port%20conflicts)
 Pi-hole vs Nginx fighting over port 80 — diagnosis, resolution, and remapping Pi-hole to port 8080.
 
-### 2. [Fail2ban for Pi-hole](02-fail2ban-pihole/)
+### 2. [Fail2ban for Pi-hole (Docker)](https://github.com/Anureyki/Sys_Admin.projects/blob/main/fail2ban-docker.md)
 Brute force protection for Pi-hole's web interface using custom fail2ban filters and Docker log paths.
 
 ### 3. [SSH Hardening](03-ssh-hardening/)
