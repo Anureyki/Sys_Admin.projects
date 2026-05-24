@@ -4,7 +4,7 @@ A collection of real-world Linux system administration fixes, automation, and se
 
 ## Projects
 
-### 1. [DNS Port Conflict](01-dns-port-conflict/)
+### 1. [DNS Port Conflict](https://github.com/Anureyki/Sys_Admin.projects/blob/main/01%20DNS%20Filtering%20port%20conflicts)
 Pi-hole vs Nginx fighting over port 80 — diagnosis, resolution, and remapping Pi-hole to port 8080.
 
 ### 2. [Fail2ban for Pi-hole](02-fail2ban-pihole/)
