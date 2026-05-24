@@ -16,8 +16,8 @@ Blocking brute force attacks with fail2ban, disabling root login, password authe
 ### 4. [Pi-hole Automation](https://github.com/Anureyki/Sys_Admin.projects/blob/main/pihole-automation.md)
 Daily gravity updates and auto‑restart health checks using cron and Docker restart policies.
 
-### 5. [Docker Bind Mounts](05-docker-bind-mounts/)
-Persistent storage for containerized services using Docker volumes and bind mounts.
+### 5. [Docker Bind Mounts & Persistent Configuration](https://github.com/Anureyki/Sys_Admin.projects/blob/main/Docker-bind-mounted.md)
+Moving from Docker named volumes to bind mounts for persistent, backup‑ready Pi-hole configuration — and finally stopping daily rebuilds.
 
 ## Tools Used
 - Ubuntu Linux
