@@ -13,8 +13,8 @@ Brute force protection for Pi-hole's web interface using custom fail2ban filters
 ### 3. [SSH Hardening](https://github.com/Anureyki/Sys_Admin.projects/blob/main/ssh-hardening.md)
 Blocking brute force attacks with fail2ban, disabling root login, password authentication, and moving to key‑only access.
 
-### 4. [Pi-hole Automation](04-pihole-automation/)
-Daily gravity updates and auto-restart health checks using cron and Docker restart policies.
+### 4. [Pi-hole Automation](https://github.com/Anureyki/Sys_Admin.projects/blob/main/pihole-automation.md)
+Daily gravity updates and auto‑restart health checks using cron and Docker restart policies.
 
 ### 5. [Docker Bind Mounts](05-docker-bind-mounts/)
 Persistent storage for containerized services using Docker volumes and bind mounts.
