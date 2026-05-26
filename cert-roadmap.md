@@ -1,5 +1,7 @@
 # Certification Roadmap
 
+## Mermaid Diagram
+
 ```mermaid
 graph TD
     A[Linux+ / RHCSA] --> B[Red Hat Intermediate<br/>RHCE / Ansible]
@@ -15,7 +17,7 @@ graph TD
     K[DLI / AI Fundamentals] --> L[AI Security / GPU Workloads]
     L --> E
     L --> I
-    G --> M[Full Stack Architect<br/>(Linux + K8s + Cloud + Security)]
+    G --> M[Full Stack Architect<br/>Linux + K8s + Cloud + Security]
     H --> M
     I --> M
     J --> M
@@ -31,7 +33,7 @@ graph TD
 | **Intermediate** | Automation + orchestration | RHCE, CKA, AWS SAA |
 | **Advanced** | Depth in one or more areas | CKAD, CKS, CISSP, OSCP, DevOps certs |
 | **AI/GPU Pipeline** | Optional but powerful | DLI, AI security |
-| **Convergence** | Where the stacks meet | None — this is you after stacking |
+| **Convergence** | Where the stacks meet | None — this is **you** after stacking |
 | **Final Goal** | Your Web3 privacy network | Built by you, not a cert |
 
 ## Progress Tracking
