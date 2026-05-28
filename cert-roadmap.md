@@ -4,57 +4,51 @@
 
 ```mermaid
 graph TD
-    A[Linux+ / RHCSA] --> B[Red Hat Intermediate<br/>RHCE / Ansible]
-    A --> C[Security+ / CISSP<br/>Security Pipeline]
-    A --> D[Cloud Foundation<br/>AWS CCP / Azure AZ-900]
-    B --> E[Kubernetes Core<br/>CKA]
+    A["Linux+ / RHCSA"] --> B["Red Hat Intermediate<br/>RHCE / Ansible"]
+    A --> C["Security+"]
+    A --> D["NVIDIA DLI – AI Fundamentals"]
+    B --> E["Kubernetes Core (CKA)"]
     C --> E
-    D --> F[Cloud Associate<br/>AWS SAA / Azure AZ-104]
-    E --> G[Kubernetes Developer<br/>CKAD]
-    E --> H[Kubernetes Security<br/>CKS]
-    F --> I[Cloud DevOps<br/>AWS DOP / Azure DevOps]
-    C --> J[Advanced Security<br/>CISSP / OSCP]
-    K[DLI / AI Fundamentals] --> L[AI Security / GPU Workloads]
-    L --> E
-    L --> I
-    G --> M[Full Stack Architect<br/>Linux + K8s + Cloud + Security]
-    H --> M
-    I --> M
-    J --> M
-    L --> M
-    M --> N[Web3 Privacy Network<br/>Decentralized Infrastructure]
+    D --> E
+    E --> F["Kubernetes Developer (CKAD)"]
+    E --> G["Kubernetes Security (CKS)"]
+    F --> H["CTDS – Tokenization & DeFi"]
+    G --> H
+    H --> I["Web3 Privacy Network<br/>Decentralized Infrastructure"]
 ```
 
-## How to Read This Diagram
+## Core Certifications (Immediate Focus)
 
-| Layer | What it means | Certs in this layer |
-|-------|---------------|---------------------|
-| **Foundation** | Non‑negotiable base | Linux+, RHCSA, Security+, Cloud CCP |
-| **Intermediate** | Automation + orchestration | RHCE, CKA, AWS SAA |
-| **Advanced** | Depth in one or more areas | CKAD, CKS, CISSP, OSCP, DevOps certs |
-| **AI/GPU Pipeline** | Optional but powerful | DLI, AI security |
-| **Convergence** | Where the stacks meet | None — this is **you** after stacking |
-| **Final Goal** | Your Web3 privacy network | Built by you, not a cert |
+- [ ] **Linux+ / RHCSA** – Linux system administration foundation
+- [ ] **Red Hat Intermediate (RHCE / Ansible)** – Automation for node deployment
+- [ ] **Security+** – Core security principles for private network
+- [ ] **Kubernetes Core (CKA)** – Orchestration for AI backend
+- [ ] **Kubernetes Developer (CKAD)** – Deploying AI services on K8s
+- [ ] **Kubernetes Security (CKS)** – Securing the container platform
+- [ ] **NVIDIA DLI – AI Fundamentals** – Privacy‑preserving AI (Diffprivlib, ART)
+- [ ] **CTDS – Tokenization & DeFi** – Core tokenomics design
+
+## Optional / Later (Low Priority for Now)
+
+- [ ] Cloud Foundation (AWS CCP / Azure AZ-900)
+- [ ] Cloud Associate (AWS SAA / Azure AZ-104)
+- [ ] Cloud DevOps (AWS DOP / Azure DevOps)
+- [ ] CISSP / OSCP (long‑term security goals)
+- [ ] CBA (Chartered Blockchain Analyst)
+- [ ] CDAA (Chartered Digital Asset Analyst)
+- [ ] CDAV (Certified Digital Asset Valuator)
 
 ## Progress Tracking
 
-- [ ] Linux+ / RHCSA (Foundation)
-- [ ] Red Hat Intermediate (RHCE / Ansible)
-- [ ] Security+ / CISSP
-- [ ] Cloud Foundation (AWS CCP / Azure AZ-900)
+- [ ] Linux+ / RHCSA
+- [ ] Red Hat Intermediate
+- [ ] Security+
 - [ ] Kubernetes Core (CKA)
-- [ ] Cloud Associate (AWS SAA / Azure AZ-104)
+- [ ] NVIDIA DLI
+- [ ] CTDS
 - [ ] Kubernetes Developer (CKAD)
 - [ ] Kubernetes Security (CKS)
-- [ ] Cloud DevOps (AWS DOP / Azure DevOps)
-- [ ] Advanced Security (CISSP / OSCP)
-- [ ] DLI / AI Fundamentals
-- [ ] AI Security / GPU Workloads
 
 ## Final Goal
 
 - [ ] Web3 Privacy Network (Decentralized Infrastructure)
-
-## Last Updated
-
-May 2026
