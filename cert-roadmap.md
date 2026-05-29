@@ -43,7 +43,7 @@ graph TD
 
 ### Phase 2: AI Engineering (You are here)
 - [x] IBM SkillsBuild RAG Badge
-- [ ] **IBM AI Engineering Professional Certificate** (In progress)
+- [ ] IBM AI Engineering Professional Certificate (In progress)
 
 ### Phase 3: Tokenomics & Identity
 - [ ] CTDS – Tokenization & DeFi
