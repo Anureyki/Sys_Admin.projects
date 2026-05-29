@@ -1,54 +1,57 @@
-# Certification Roadmap
+# AgNetworking Certification Roadmap (Updated)
 
 ## Mermaid Diagram
 
 ```mermaid
 graph TD
-    A["Linux+ / RHCSA"] --> B["Red Hat Intermediate<br/>RHCE / Ansible"]
-    A --> C["Security+"]
-    A --> D["NVIDIA DLI – AI Fundamentals"]
-    B --> E["Kubernetes Core (CKA)"]
-    C --> E
-    D --> E
-    E --> F["Kubernetes Developer (CKAD)"]
-    E --> G["Kubernetes Security (CKS)"]
-    F --> H["CTDS – Tokenization & DeFi"]
+    subgraph "Phase 1: Core Infrastructure"
+        A[Linux+ / RHCSA] --> B[Security+]
+        A --> C[CKA (Kubernetes)]
+    end
+
+    subgraph "Phase 2: AI Engineering (Intelligence Layer)"
+        D[IBM AI Engineering Professional Certificate] --> E[RAG / LangChain]
+        D --> F[Vector Databases]
+        D --> G[Predictive Models]
+    end
+
+    subgraph "Phase 3: Tokenomics & Identity (Value Layer)"
+        H[CTDS - Tokenization & DeFi] --> I[CBA / CDAA]
+        H --> J[DID + ZKP Implementation]
+    end
+
+    subgraph "Final Goal"
+        K[Web3 Privacy Network<br/>Decentralized Infrastructure]
+    end
+
+    C --> D
     G --> H
-    H --> I["Web3 Privacy Network<br/>Decentralized Infrastructure"]
+    J --> K
+
+    style A fill:#2d5016,stroke:#4a7c24,color:#fff
+    style D fill:#3b82f6,stroke:#2563eb,color:#fff
+    style H fill:#f5a623,stroke:#d48c1a,color:#000
+    style K fill:#7b2d8e,stroke:#9b4dae,color:#fff
 ```
-
-## Core Certifications (Immediate Focus)
-
-- [ ] **Linux+ / RHCSA** – Linux system administration foundation
-- [ ] **Red Hat Intermediate (RHCE / Ansible)** – Automation for node deployment
-- [ ] **Security+** – Core security principles for private network
-- [ ] **Kubernetes Core (CKA)** – Orchestration for AI backend
-- [ ] **Kubernetes Developer (CKAD)** – Deploying AI services on K8s
-- [ ] **Kubernetes Security (CKS)** – Securing the container platform
-- [ ] **NVIDIA DLI – AI Fundamentals** – Privacy‑preserving AI (Diffprivlib, ART)
-- [ ] **CTDS – Tokenization & DeFi** – Core tokenomics design
-
-## Optional / Later (Low Priority for Now)
-
-- [ ] Cloud Foundation (AWS CCP / Azure AZ-900)
-- [ ] Cloud Associate (AWS SAA / Azure AZ-104)
-- [ ] Cloud DevOps (AWS DOP / Azure DevOps)
-- [ ] CISSP / OSCP (long‑term security goals)
-- [ ] CBA (Chartered Blockchain Analyst)
-- [ ] CDAA (Chartered Digital Asset Analyst)
-- [ ] CDAV (Certified Digital Asset Valuator)
 
 ## Progress Tracking
 
+### Phase 1: Core Infrastructure
 - [ ] Linux+ / RHCSA
-- [ ] Red Hat Intermediate
 - [ ] Security+
-- [ ] Kubernetes Core (CKA)
-- [ ] NVIDIA DLI
-- [ ] CTDS
-- [ ] Kubernetes Developer (CKAD)
-- [ ] Kubernetes Security (CKS)
+- [ ] CKA (Kubernetes)
 
-## Final Goal
+### Phase 2: AI Engineering (You are here)
+- [x] IBM SkillsBuild RAG Badge
+- [ ] **IBM AI Engineering Professional Certificate** (In progress)
 
+### Phase 3: Tokenomics & Identity
+- [ ] CTDS – Tokenization & DeFi
+- [ ] CBA / CDAA
+- [ ] DID + ZKP Implementation
+
+### Final Goal
 - [ ] Web3 Privacy Network (Decentralized Infrastructure)
+
+## Last Updated
+May 2026
